@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block nav_item_tasks %}active{% endblock nav_item_tasks %}
+
+{% block body %}
+
+<div class="conatiner py-3 ">
+    <h2 class="text-center">toDolist - All Tasks </h2>
+    <div style="width:75%; margin:0 auto;">
+        <table id="myTable" class="table table-success" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Task Title</th>
+            <th scope="col">Task Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% comment %} Run for loop here and iterate through all the tasks
+            {% endcomment %}
+            {% for task in tasks %}
+            <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{task.taskTitle}}</td>
+            <td>{{task.taskDetail}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock body %}

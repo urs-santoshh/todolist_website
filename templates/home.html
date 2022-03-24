@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block nav_item_home %}active{% endblock nav_item_home %}
+
+{% block body %}
+
+{% if success %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        Task added to the list.<strong>Succesfully</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endif %}
+
+<div class="container mt-2">
+  <h2 class="text-center">Welcome to toDolist - Add a task </h2>
+  <form action="/" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="title" class="form-label">Task Title</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div class="mb-3">
+      <label for="detail" class="form-label">Task Detail</label>
+      <textarea class="form-control" name="detail" id="detail" style="height: 110px;"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+{% endblock body %}

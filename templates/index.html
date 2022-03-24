@@ -1,0 +1,113 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/brands.css' %}">
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/datatables.min.css' %}"/>
+ 
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Datatables JS -->
+    <script type="text/javascript" src="{% static 'js/datatables.min.js' %}"></script>
+
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
+
+
+    <title>toDolist</title>
+  </head>
+
+  <body style="padding-bottom: 120px;">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">toDolist</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% block nav_item_home %}{% endblock nav_item_home %}" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% block nav_item_tasks %}{% endblock nav_item_tasks %}" href="/tasks">Tasks</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--template inheritence-->
+        {% block body %}
+
+        {% endblock body %}
+
+        <footer class="fixed-bottom" >
+
+            <div class="text-center container p-4 pb-0">
+
+                <section class="mb-4">
+
+                    <!-- Facebook -->
+                    <a class="btn btn-primary btn-floating m-1 rounded-circle" 
+                        target="_blank" href="https://facebook.com/urs.santoshh" role="button" data-bs-toggle="button">
+                        <b class="fa-brands fa-facebook-f"></b>
+                    </a>
+                    
+                    
+                    <!-- Twitter -->
+                    <a class="btn btn-primary btn-floating m-1 rounded-circle" 
+                        target="_blank" href="https://twitter.com/urs_santoshh" role="button" data-bs-toggle="button">
+                        <b class="fa-brands fa-twitter"></b>
+                    </a>
+
+                    <!-- Spotify -->
+                    <a class="btn btn-success btn-floating m-1 rounded-circle"
+                        target="_blank" href="https://open.spotify.com/user/21xesiekdg6lsoqift3o6o2vi" role="button" data-bs-toggle="button">
+                        <b class="fa-brands fa-spotify"></b>
+                    </a>
+
+                    <!-- Instagram -->
+                    <!--<a class="btn btn-primary btn-floating m-1 rounded-circle" style="background-color: #ac2bac;" target="_blank" href="#!"
+                        role="button">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a> -->
+
+                    <!-- Linkedin -->
+                    <!--<a class="btn btn-primary btn-floating m-1 rounded-circle" style="background-color: #0082ca;" target="_blank" href="#!" role="button">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>-->
+
+                    <!-- Github -->
+                    <a class="btn btn-dark btn-floating m-1 rounded-circle" 
+                        target="_blank" href="https://github.com/urs-santoshh" role="button">
+                        <b class="fa-brands fa-github"></b>
+                    </a>
+
+                </section>
+
+            </div>
+
+            <div class="">
+                <p class="bg-dark text-light text-center py-2 my-0">
+                    &copy;urs-santoshh | All rights reserved
+                </p>
+            </div>
+        </footer>
+
+    
+    </body>
+
+</html>
